@@ -1,0 +1,78 @@
+{
+  "suites": [
+    {
+      "name": "Sample Test Suite",
+      "configs": {
+        "baseUrl": "{{baseUrl}}",
+        "beforeAllScript": "beforeAllScript.js",
+        "afterAllScript": "afterAllScript.js"
+      },
+      "scenarios": [
+        {
+          "test": "Sample Scenario",
+          "beforeScript": "beforeScript.js",
+          "afterScript": "afterScript.js",
+          "request": {
+            "url": "/posts",
+            "method": "post",
+            "bodyPath": "data/bodyFromFile.json",
+            "fields": [
+              {
+                "path": "$.title",
+                "value": "Live Long and Prosper"
+              },
+              {
+                "path": "$.body",
+                "value": "Computer, run a level-two diagnostic on warp-drive systems."
+              }
+            ],
+            "body": {
+              "id": 123456,
+              "title": "Live Long and Prosper",
+              "body": "Computer, run a level-two diagnostic on warp-drive systems."
+            }
+          },
+          "expected": {
+            "status": 201,
+            "data": [
+              {
+                "path": "$.title",
+                "equals": "Live Long and Prosper"
+              },
+              {
+                "path": "$.body",
+                "contains": "computer"
+              },
+              {
+                "path": "$.body",
+                "notcontains": "StarWars"
+              },
+              {
+                "path": "$.body",
+                "customMessage": "Beauty is transitory."
+              }
+            ]
+          },
+          "result": {
+            "context": [],
+            "state": "passed",
+            "start": "2019-03-02T12:11:14.967Z",
+            "end": "2019-03-02T12:11:16.269Z",
+            "duration": "1.30s"
+          }
+        }
+      ]
+    }
+  ],
+  "result": {
+    "state": "passed",
+    "start": "2019-03-02T12:11:14.958Z",
+    "end": "2019-03-02T12:11:16.296Z",
+    "duration": "1.34s",
+    "totalPassedTestCount": 1,
+    "totalFailedTestCount": 0,
+    "totalTestCount": 1,
+    "totalSuiteCount": 1,
+    "passPercentage": "100.00%"
+  }
+}

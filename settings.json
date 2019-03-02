@@ -1,0 +1,24 @@
+{
+  "paths": {    
+    "reports": "reports",
+    "scripts": "scripts",
+    "tests": "tests"
+  },
+  "configs": {
+    "env": "dev",
+    "baseUrl": "{{baseUrl}}",
+    "method": "get",
+    "asyncLimit": 2,
+    "delay": 0
+  },
+  "environments": {
+    "dev": {
+      "baseUrl": "https://jsonplaceholder.typicode.com",
+      "statTestUrl": "http://httpstat.us"
+    },
+    "test": {
+      "baseUrl": "https://test.jsonplaceholder.typicode.com",
+      "statTestUrl": "http://test.httpstat.us"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "api-test-batpadjs",
+  "version": "1.0.0",
+  "description": "Demo to show API Test Automation Using BatPadJS",
+  "author": "Marc Dacanay",
+  "scripts": {
+    "batpad-cli": "node ./node_modules/batpadjs/cli",
+    "batpad": "node ./node_modules/batpadjs/core",
+    "test": "batpad --test"
+  },
+  "dependencies": {
+    "batpadjs": "^1.0.12"
+  }
+}
